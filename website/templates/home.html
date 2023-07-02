@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Uber Project</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Syncopate" />
+</head>
+
+<body>
+    <div class="projectBriefDiv">
+        <h1>DVD Rental Data Engineering Project</h1>
+        <h4>Built By: Abdulaziz Alharbi</h4>
+    </div>
+    <div class="reportDiv">
+        <h4>This Visulization Report Was Built Using Google Looker Studio
+        </h4>
+        <iframe width="95%" height="90%"
+            src="https://lookerstudio.google.com/embed/reporting/a6bc1996-f612-4f67-9f2c-603db79dd11a/page/6prVD""
+            frameborder=" 0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="projectPipeLineDiv">
+        <h4 style="color: white;">This Project Diagram Was Built Programmatically Using Diagrams.py
+            Library</h4>
+        <img style="width:50%; border-radius: 10px;" src="{{url_for('static', filename='dvd_rental_pipeline.png')}}"
+            alt="Project Diagram" style="width: 80%; height: 500px;">
+    </div>
+    <div class="dataModelingDiv">
+        <h4 style="color: white;">This Warehouse Data Modeling Diagram Was Built Using Lucid</h4>
+        <img style="width:40%; border-radius: 10px;"
+            src="{{url_for('static', filename='DVD_RENTAL_DATA_MODELING.png')}}" alt="GCP Data Warehouse Design"
+            style="width: 80%; height: 500px;">
+    </div>
+</body>
+
+</html>
+
+<style>
+    body {
+        text-align: center;
+        background-color: lightblue;
+        font-family: Arial, sans-serif;
+    }
+
+    .projectBriefDiv {
+        text-align: center;
+        /* font-family: 'Ubuntu', sans-serif; */
+        background-color: #D32E2E;
+        color: white;
+        border-radius: 10px;
+        width: 50%;
+        margin-left: 25%;
+        padding: 5px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        box-shadow:
+            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12);
+
+    }
+
+    .reportDiv {
+        text-align: center;
+        /* font-family: 'Ubuntu', sans-serif; */
+        background-color: #D32E2E;
+        color: white;
+        border-radius: 20px;
+        width: 50%;
+        margin-left: 15%;
+        padding: 5px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        height: 800px;
+        width: 70%;
+        box-shadow:
+            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12);
+        padding-bottom: 30px;
+    }
+
+    .projectPipeLineDiv {
+        /* font-family: 'Ubuntu', sans-serif; */
+        background-color: #D32E2E;
+        border-radius: 20px;
+        box-shadow:
+            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12);
+        padding: 10px;
+        margin: 20px;
+        width: 70%;
+        height: 650px;
+        margin-left: 15%;
+    }
+
+    .dataModelingDiv {
+        /* font-family: 'Ubuntu', sans-serif; */
+        background-color: #D32E2E;
+        border-radius: 20px;
+        box-shadow:
+            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12);
+        padding: 10px;
+        margin: 20px;
+        width: 70%;
+        height: 800px;
+        margin-left: 15%;
+    }
+</style>
