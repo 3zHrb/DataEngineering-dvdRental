@@ -12,7 +12,7 @@ def transform():
     city = tableDict["city"]
     country = tableDict["country"]
     customer = tableDict["customer"]
-    film = tableDict["film"]
+    film = tableDict["film"].drop("special_features", axis=1)
     film_actor = tableDict["film_actor"]
     film_category = tableDict["film_category"]
     inventory = tableDict["inventory"]
@@ -43,6 +43,7 @@ def transform():
     address_dim = pd.merge(address, city, on="city_id", how="left").merge(
         country, on="country_id", how="left"
     )
+
     address_dim.rename(
         columns={
             "last_update_x": "last_update_address",
@@ -66,10 +67,11 @@ def transform():
     )
 
     # create customer_dim
-    customer_dim = customer
+    customer_dim = customer.drop(["active", "last_update", "create_date"], axis=1)
+    # customer_dim["create_date"] = pd.to_datetime(customer_dim["create_date"])
 
     # create staff_dim
-    staff_dim = staff
+    staff_dim = staff.drop("picture", axis=1)
 
     # creating fact_table
     rentalColumns = rental.columns[~rental.columns.isin(["customer_id", "staff_id"])]
@@ -94,17 +96,20 @@ def transform():
         ]
     )
     fact_table.rename(columns={"store_id_x": "store_id"}, inplace=True)
+    fact_table = fact_table.loc[:, ~fact_table.columns.duplicated()].copy()
 
     dictOfDataFrames = {
-        'film_dim': film_dim,
-        'address_dim': address_dim,
-        'rental_dim': rental_dim,
-        'inventory_dim': inventory_dim,
-        'customer_dim': customer_dim,
-        'staff_dim': staff_dim,
-        'fact_table': fact_table
+        "address_dim": address_dim,
+        "rental_dim": rental_dim,
+        "inventory_dim": inventory_dim,
+        "customer_dim": customer_dim,
+        "staff_dim": staff_dim,
+        "film_dim": film_dim,
+        "fact_table": fact_table,
     }
-    print(dictOfDataFrames)
+
+    print(film_dim)
+    return dictOfDataFrames
 
 
 transform()

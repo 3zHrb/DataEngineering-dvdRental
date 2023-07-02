@@ -14,6 +14,10 @@ engine = create_engine(
 )
 
 
+### Note: This database has a flaw, because rental table or payment table one of them should have had a film_id that was rented, now fact table is hard to be created
+
+### but we can only get how much each film made based on the link between film -> inventory -> rental -> payment
+
 def getSqlQuery(query):
     return pd.read_sql_query(query, engine)
 
